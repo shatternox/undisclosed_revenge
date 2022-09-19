@@ -1,0 +1,33 @@
+version: "3.1"
+services:
+  undisclosedweb:
+    build: .
+    ports:
+      - "44512:80"
+    volumes:
+      - ./undisclosed-web:/var/www/html:ro
+      - ./undisclosed-web/data:/var/www/html/data
+      - ./nft-collection:/nft-collection:ro
+    networks:
+      mynet:
+        ipv4_address: 172.16.47.14
+
+  adminbrain:
+    build: ./admin_brain
+    ports:
+      - 39981:3000
+    networks:
+      mynet:
+        ipv4_address: 172.16.47.15
+
+
+volumes:
+  persistent:
+
+networks:
+  mynet:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.47.0/24
