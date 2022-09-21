@@ -10,7 +10,6 @@
                   <div class="detail-box">
                     <h1>
                       Everybody has a secret
-                      <!-- F*2FXEaNm!@rc.&?X[J^Bl79s@:s.(E+j1 -->
                     </h1>
                     <p>
                       We care about your secret

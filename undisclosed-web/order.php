@@ -105,6 +105,12 @@
     <div class="text-center font-weight-bolder">Total price: $<?php echo $totalprice; ?></div>
   </div>
 
+  <div class="btn-box">
+      <a id="checkout">
+        Pay now
+      </a>
+    </div>
+
 </section>
 
 
