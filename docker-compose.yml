@@ -12,15 +12,6 @@ services:
       mynet:
         ipv4_address: 172.16.47.14
 
-  adminbrain:
-    build: ./admin_brain
-    ports:
-      - 39981:3000
-    networks:
-      mynet:
-        ipv4_address: 172.16.47.15
-
-
 volumes:
   persistent:
 
@@ -31,3 +22,18 @@ networks:
       driver: default
       config:
         - subnet: 172.16.47.0/24
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
