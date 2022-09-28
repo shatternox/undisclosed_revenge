@@ -1,6 +1,8 @@
 <?php
-require "./includes/header.inc.php";
-include "tokengenerator.php";
+session_start();
+include "secrets.php";
+
+$_SESSION['payment_status'] = "invalid";
 
 class Payment {
   public $totalPayment;
@@ -28,10 +30,21 @@ if (isset($_GET['payment_data'])) {
 
       if(isset($_GET['secret_address']) && $_GET['secret_address'] === $admin_addressBIP39){
         $_SESSION['admin_pass'] = $admin_pass;
-        header("Location: " . $secret_path);
+        $_SESSION['payment_status'] = "valid";
+        header("Location: ../" . $secret_path);
+      } else {
+        echo "Payment is not valid!";
+        http_response_code(400);
       }
     } else {
       echo "Payment is not valid!";
+      http_response_code(400);
     }
-  } 
+  } else {
+    echo "Payment is not valid!";
+    http_response_code(400);
+  }
+} else {
+  echo "Payment is not valid!";
+  http_response_code(400);
 }

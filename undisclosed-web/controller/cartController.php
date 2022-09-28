@@ -42,7 +42,7 @@ if (isset($_POST) && $_POST['action'] === "add_to_cart") {
 } else if (isset($_POST) && $_POST['action'] === "empty_cart") {
     unset($_SESSION['cart']);
     $_SESSION['cart'] = array();
-} else if (isset($_POST) && $_POST['action'] === "checkout") {
+} else if (isset($_POST) && $_POST['action'] === "checkout" && $_SESSION['payment_status'] === "valid") {
     
     $filename = sha1(uniqid());
 
