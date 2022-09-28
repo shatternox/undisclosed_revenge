@@ -69,17 +69,17 @@
               </div>
               <div class="detail-box">
                 <h5>
-                  <?= $item->item_name; ?>
+                  <?= htmlspecialchars($item->item_name); ?>
                 </h5>
                 <p>
-                  <?= $item->item_desc; ?>
+                  <?= htmlspecialchars($item->item_desc); ?>
                 </p>
                 <div class="options">
                   <h6>
-                    $<?= $item->item_price; ?>
+                    $<?= htmlspecialchars($item->item_price); ?>
                   </h6>
                   <h6 id="mask<?= $item->item_id; ?>">
-                    Total item: <?= $item->qty; ?>
+                    Total item: <?= htmlspecialchars($item->qty); ?>
                   </h6>
                 </div>
               </div>
@@ -102,14 +102,8 @@
 
     ?>
 
-    <div class="text-center font-weight-bolder">Total price: $<?php echo $totalprice; ?></div>
+    <div class="text-center font-weight-bolder">Total price: $<?php echo htmlspecialchars($totalprice); ?></div>
   </div>
-
-  <div class="btn-box">
-      <a id="checkout">
-        Pay now
-      </a>
-    </div>
 
 </section>
 
