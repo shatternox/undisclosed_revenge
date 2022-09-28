@@ -1,5 +1,4 @@
 <?php
-
 Class Token {
     public $secrettoken;
 
@@ -9,6 +8,4 @@ Class Token {
 }
 
 $paymentToken = new Token();
-
-
 ?>
