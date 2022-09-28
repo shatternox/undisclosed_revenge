@@ -205,7 +205,17 @@ $("#checkout").on("click", (e) => {
     type: "GET",
     url: "../controller/paymentController.php",
     success: (res) => {
-      $.ajax({
+
+      if(res === "Payment is not valid!"){
+        Swal.fire({
+        position: "center",
+        icon: "warning",
+        title: "Payment invalid!",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      } else {
+        $.ajax({
         type: "POST",
         url: "../controller/cartController.php",
         data: "action=checkout",
@@ -222,15 +232,7 @@ $("#checkout").on("click", (e) => {
           });
         },
       });
+      }      
     },
-    error: (res) => {
-      Swal.fire({
-        position: "center",
-        icon: "warning",
-        title: "Payment invalid!",
-        showConfirmButton: false,
-        timer: 1500,
-      });
-    }
   });
 });

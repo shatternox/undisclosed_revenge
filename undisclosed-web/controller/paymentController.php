@@ -34,17 +34,13 @@ if (isset($_GET['payment_data'])) {
         header("Location: ../" . $secret_path);
       } else {
         echo "Payment is not valid!";
-        http_response_code(400);
       }
     } else {
       echo "Payment is not valid!";
-      http_response_code(400);
     }
   } else {
     echo "Payment is not valid!";
-    http_response_code(400);
   }
 } else {
   echo "Payment is not valid!";
-  http_response_code(400);
 }
