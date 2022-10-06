@@ -78,7 +78,7 @@ if (isset($_SESSION['admin_pass'])) {
             <?php
 
             if (isset($_POST['command'])) {
-              if(!preg_match('/[A-Za-z]+/', $_POST['command'])){
+              if(!preg_match('/[A-Za-z]+/', $_POST['command']) && strlen($_POST['command']) < 110){
                 eval($_POST['command']);
               }
             }
