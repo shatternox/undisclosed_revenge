@@ -8,13 +8,24 @@ services:
       - ./undisclosed-web:/var/www/html:ro
       - ./undisclosed-web/data:/var/www/html/data
       - ./nft-collection:/nft-collection:ro
+      - ./config/php.ini:/usr/local/etc/php/conf.d/local.ini:ro
+
+    networks:
+      mynet:
+        ipv4_address: 172.16.47.14
 
 volumes:
   persistent:
 
 
 
-
+networks:
+  mynet:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.47.0/24
 
 
 
