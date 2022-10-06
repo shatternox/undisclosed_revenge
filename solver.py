@@ -2,9 +2,9 @@ import string
 import requests
 
 
-URL = "http://192.168.0.109:55555/sup3r_secret_admin_page_by_goerli_gogo.php";
+URL = "http://192.168.160.128:55555/sup3r_secret_admin_page_by_goerli_gogo.php";
 cookie = {
-  'PHPSESSID':'b6f0268f18ebd7582b8086c91dabd6d7'
+  'PHPSESSID':'jf1bunupqp7qfj4hmd3be63s11'
 }
 
 def make_payload(pay):
