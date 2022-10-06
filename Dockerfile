@@ -9,14 +9,6 @@ RUN apt-get update && apt-get install -y \
 
 RUN useradd ctfplayer --password J822yl8#KvR09c%wYWxfb$9Ti
 
+RUN chown -R ctfplayer:ctfplayer /var/www/html/
+
 USER ctfplayer
-
-
-
-
-
-
-
-
-
-
