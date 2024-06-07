@@ -10,7 +10,7 @@ const Web3 = require('web3');
 const { abi, evm } = require('./compile');
  
 provider = new HDWalletProvider(
-    'kidney debate foil book illness grant drama clog market under party carpet',
+    '[MNEUMONIC]',
     'https://goerli.infura.io/v3/a6f3a6efb1f44ba399ca1d087dc7e5bb'
 );
  
